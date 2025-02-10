@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Result</title>
+    </head>
+	
+	<body>
+		
+		<h>Phrase à prédir : {{ result["SentenceToPredict"] }}</h>
+		<h>Sujet principal prédit : {{ result["SentenceToPredict"] }}</h>
+		<h>Sujet secondaire : {{ result["SentenceToPredict"] }}</h>
+		<h>Sujet tertiaire : {{ result["SentenceToPredict"] }}</h>
+	</body>
+	
+
+</html>

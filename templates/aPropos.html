@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+
+        <link rel="stylesheet" href="../../static/css/style_plateforme.css">   
+        <link rel="icon" type="image/png" sizes="32x32" href="../../static/Images/favicon-32x32.png">
+        <title>ATQA</title>
+    </head>
+
+    <body>
+
+    	<header>
+
+    		<div class="header">
+   				<div class="LogoHeader"><img src="../../static/Images/logo.png" alt="Logo" class="Logo"> </div>
+                                <div class="NomHeader"><h1 class="NameHeader">Plateforme de test</h1></div>
+
+   				<div class="HeaderFond"></div>
+			</div>
+    	<div class="NavEmploye">
+            
+              <a href="{{ url_for('predictSubject') }}" class="lien77">Prédiction</a>
+              <div class="Divider"></div>
+              <a href="{{ url_for('aPropos') }}" id="enCours1" class="lien">À-propos</a> 
+  
+                 
+              
+        </div>
+    	</header>
+        
+        <main class="PageInfo"  style="margin-top:300px;padding-bottom:70px">
+            <div class="Info">
+            
+                <div>
+                    <h1 class="policeProfil">Bienvenue, </h1>
+                    <h3 class="type2"></h3>
+                     
+                </div>
+            </div>
+           
+            
+    
+            
+
+            <h2 class="txt2">Qu'est ce que ATQA ?</h2>
+            <div class="Divider4"></div> 
+            <p style="font-family:Futura; color:white;width:1200px;margin-left:70px;margin-top:20px; text-align: justify;"> ATQA est une intelligence artificielle innovante qui vous aide à classer les tickets incidents en utilisant une analyse avancée de la description du ticket. Conçue pour travailler avec le système de ticketing EasyVista, ATQA utilise des algorithmes puissants pour prédire à quel sujet dans le catalogue EasyVista appartient un ticket. Grâce à son interface intuitive et à sa simplicité d'utilisation, ATQA est un outil efficace pour améliorer l'efficacité et la rapidité de la gestion des tickets.</p>
+            <div style="display:flex">
+                <p style="font-family:Futura; color:white;width:500px;margin-left:70px;margin-top:20px; text-align: justify;">Et la technologie derrière tout ça ? <br> <br>ATQA utilise des techniques de NLP. Le NLP (Natural Language Processing en anglais) est une branche de l'intelligence artificielle qui se concentre sur la compréhension et la manipulation du langage humain. Cela inclut la reconnaissance du discours, l'analyse syntaxique, la traduction automatique, la génération de langage et l'analyse de sentiments. <br><br> Son développement est donc entièrement basé sur du python et nous avons utilisé plusieurs bibliothèques de NLP pour arriver à créer ATQA. SpaCy, NLTK, Sickit learn sont des éditeurs leader sur le marché de l’intelligence artificielle   <p>
+                <img src="../../static/Images/explication.png" alt="Logo" style="height:330px;margin-left:80px">
+             </div>
+            
+            <h2 class="txt2" style="margin-top:20px">Comment utiliser ATQA ?</h2>
+            <div class="Divider4"></div> 
+            <p style="font-family:Futura; color:white;width:1000px;margin-left:70px;margin-top:20px; text-align: justify;"> Pour cela rien de plus simple, il vous suffit de copier coller la description d'un ticket dans l'espace prévu à cet effet sur la page 'Prédiction'. Le résultat s'affichera en dessous en quelques secondes !</p>
+            
+           
+
+                
+        </main>
+     
+        <footer class="footer5">
+                
+    		<div class="footerContenu1">
+   			<div class="LogoFooter"><p><img src="../../static/Images/logo.png"  alt="Logo1" class="logo1"></p></div>
+            <div class="MailFooter"><h2 class="TextFooter"><br /> Pour toute question, veuillez contacter :<br />Louis Laurent, Chef de projet Digitalisation<br />M'envoyer un mail : <a href="mailto:louis.laurent@vinci-energies.com">Cliquez-ici</a></h2></div>
+		</div>
+
+    	</footer>
+    	
+    	
+    </body>
+</html>		

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+
+        <link rel="stylesheet" href="../../static/css/style_plateforme.css">   
+        <link rel="icon" type="image/png" sizes="32x32" href="../../static/Images/favicon-32x32.png">
+        <title>ATQA</title>
+    </head>
+
+    <body>
+
+<style>thead, tfoot {
+ 
+  color: white;
+  
+}
+
+thead th, tfoot th, tfoot td {
+  background: rgba(32,31,32,0.87);
+  border:rgba(32,31,32,0.87);
+  
+ 
+  font-size:1.3em;
+  
+  
+}
+td{
+    border-left: none;
+    border-right: none;
+}
+tr
+{
+    background-color: rgba(117,112,117,0.87);
+}
+input{
+    background-color: red;
+    border-radius: 5px;
+    color:white;
+    
+}
+        </style>
+    	
+    	<header>
+
+    		<div class="header">
+   				<div class="LogoHeader"><img src="../../static/Images/logo.png" alt="Logo" class="Logo"> </div>
+                                <div class="NomHeader"><h1 class="NameHeader">Plateforme de test</h1></div>
+
+   				<div class="HeaderFond"></div>
+			</div>
+    	<div class="NavEmploye">
+            
+              <a href="{{ url_for('predictSubject') }}"  id="enCours1" class="lien">Prédiction</a>
+              <div class="Divider"></div>
+              <a href="{{ url_for('aPropos') }}" class="lien77">À-propos</a> 
+  
+                 
+              
+        </div>
+    	</header>
+        
+        <main class="PageInfo"  style="margin-top:300px;padding-bottom:70px">
+            <div class="Info">
+            
+                <div>
+                    <h1 class="policeProfil">Bienvenue, </h1>
+                    <h3 class="type2"></h3>
+                     
+                </div>
+            </div>
+           
+            
+    
+            
+
+            <h2 class="txt2">Veuillez renseigner le contenu du ticket à prédire :</h2>
+            
+            <div class="Divider4"></div>                        
+            <form action="{{ url_for('predictSubjectResult') }}" method="post" enctype="multipart/form-data">
+                <textarea id="sentence" name="sentence" rows="15" cols="110" placeholder="Vous pouvez copier-coller le ticket ici..." style="margin-left:40px;margin-top:70px"></textarea>
+                <div style="margin-left:40px;margin-top:20px">
+                    <label for="nbResult" style="font-family:Futura;color:white">Nombre de prédiction voulu :    </label>
+    
+                    <select name="nbResult" id="nbResult">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5" selected>5</option>
+                        <option value="MAX">MAX</option>
+                    </select>
+                </div>
+
+                <div class="Envoi1"> 
+                    <button class="button" type="submit" name="envoyer" ><span>Envoyer pour traitement</span></button>
+                </div>
+                
+                
+            </form>
+            <h2 class="txt2">Prédiction de l'algorithme :</h2>
+            <div class="Divider4"></div>
+            
+            <div style="color:white;font-family:Futura;margin-left :40px;margin-top:30px">
+                {% for key,value in result_topic.items() %}
+                    <h>{{key}}: {{value}} </h>
+                {% endfor %}
+            </div>
+            <table style="text-align:center;padding-right:25px;margin-left:40px;margin-top:40px">
+                <thead>
+                    <th>Numéro</th>
+                    <th>Prédiction</th>
+                    <th>Indice de confiance</th>
+                         
+                </thead>
+                {% for key,value in result.items() %}
+                    <tr>
+                        <td style="width:150px">{{key}}</td>
+                        <td style="width:800px">{{value[0]}}</td>
+                    
+                         {% if value[1]>=50 %}
+                            <td style="width:100px;color:#33FF33">{{value[1]}}</td>
+                        {% elif value[1]< 50 and value[1]>=20 %}
+                           <td style="width:100px;color:orange">{{value[1]}}</td>
+                           
+                         {% elif value[1]< 20 %}
+                            <td style="width:100px;color:red">{{value[1]}}</td>
+                            
+                        
+                        {% endif %}
+                    </tr>
+                 {% endfor %}
+             </table>
+            
+        
+                
+           
+
+                
+        </main>
+     
+        <footer class="footer5">
+                
+    		<div class="footerContenu1">
+   			<div class="LogoFooter"><p><img src="../../static/Images/logo.png"  alt="Logo1" class="logo1"></p></div>
+            <div class="MailFooter"><h2 class="TextFooter"><br /> Pour toute question, veuillez contacter :<br />Louis Laurent, Chef de projet Digitalisation<br />M'envoyer un mail : <a href="mailto:louis.laurent@vinci-energies.com">Cliquez-ici</a></h2></div>
+		</div>
+
+    	</footer>
+    	
+    	
+    </body>
+</html>		
