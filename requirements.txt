@@ -1,0 +1,14 @@
+pandas
+numpy
+nltk
+flask
+scikit-learn
+torch
+tqdm
+requests
+keras_preprocessing
+transformers
+bs4
+ssl
+json
+-e .
